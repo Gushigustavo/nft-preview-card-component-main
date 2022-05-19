@@ -134,3 +134,5 @@ div.box3 span:nth-child(3):hover{
     cursor: pointer;
 
 }
+.attribution { font-size: 11px; text-align: center; color: var(--color6);}
+.attribution a { color:var(--color1); text-decoration: none; }
