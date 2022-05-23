@@ -39,21 +39,47 @@ section.container{
 }
 
 section.container div.imagem{
+    position: relative;
     width: 265px;
     height: 265px;
     border-radius: 5px;
     margin-bottom: 15px;
     background-image: url("images/image-equilibrium.jpg");
     background-size:contain;
+
+}
+section.container div.imagem--efeito{
+    position: absolute;
+    width: 100%;
+    height:100%;
+    background-color:rgba(15,255,255,0.5);
+    border-radius: 5px;
+    opacity: 0;
+
+}
+section.container div.imagem--efeito::after{
+    position: absolute;
+    left: 50%;
+    margin-left: -24px;
+    top: 50%;
+    margin-top: -24px;
+    content: url("images/icon-view.svg");
+}
+     div.imagem--efeito:hover{
+    animation-name: effect;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
 }
 
-section.container div.imagem:hover{
-    background :url("images/icon-view.svg"), linear-gradient(0deg,rgba(15,255,255,0.5),rgba(15, 255, 255, 0.5)),url("images/image-equilibrium.jpg");  
-    background-repeat:no-repeat, no-repeat,no-repeat;
-    background-size: 30px,100%, contain;
-    background-position: center, center,center;
-    cursor: pointer;
+@keyframes effect {
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
 }
+
 
 div.box1 h1{
     color: var(--color6);
